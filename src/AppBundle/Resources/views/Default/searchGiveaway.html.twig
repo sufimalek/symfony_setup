@@ -1,0 +1,33 @@
+{%  extends '::base.html.twig' %}
+
+
+{% block body %}
+
+    {{ form(form) }}
+
+
+    {%  if result|length > 0 %}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Slug</td>
+                </tr>
+            </thead>
+            <tbody>
+            {%  for data in result %}
+                <tr>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.price }}</td>
+                    <td>{{ data.slug }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{%  else %}
+    <div class="col-xs-12 alert alert-danger"> {{ "No Record Found"|trans }}</div>
+    {% endif %}
+
+{% endblock %}
