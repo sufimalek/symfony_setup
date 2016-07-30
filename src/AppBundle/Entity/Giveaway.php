@@ -6,8 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Giveaway
- */
-/**
+ *
  * @ORM\Entity(repositoryClass="GiveawayRepository")
  * @ORM\Table(name="giveaway")
  */
@@ -28,7 +27,7 @@ class Giveaway
 
     /**
      * @var string
-     * @ORM\Column(name="price", type="string", length=255)
+     * @ORM\Column(name="price", type="decimal", length=255)
      */
     private $price;
 
@@ -66,7 +65,7 @@ class Giveaway
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,7 +88,7 @@ class Giveaway
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -112,7 +111,7 @@ class Giveaway
     /**
      * Get price
      *
-     * @return string 
+     * @return string
      */
     public function getPrice()
     {
@@ -135,7 +134,7 @@ class Giveaway
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -158,7 +157,7 @@ class Giveaway
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -181,7 +180,7 @@ class Giveaway
     /**
      * Get updated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdated()
     {
@@ -204,7 +203,7 @@ class Giveaway
     /**
      * Get deletedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDeletedAt()
     {
@@ -227,7 +226,7 @@ class Giveaway
     /**
      * Get adminOnly
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getAdminOnly()
     {

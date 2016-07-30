@@ -13,6 +13,8 @@ use Doctrine\ORM\EntityRepository;
 class GiveawayRepository extends EntityRepository
 {
     /**
+     * To search giveaways depend upon roles
+     *
      * @param $name
      * @return array
      */
@@ -24,7 +26,7 @@ class GiveawayRepository extends EntityRepository
             ->andWhere('g.adminOnly IN (:role)')
             ->setParameter('name', '%'.$name.'%')
             ->setParameter('role', $role )
-            ->orderBy('g.price', ($sortType == 0) ? 'asc' : 'desc')
+            ->orderBy('g.price ', ($sortType == 0) ? 'asc' : 'desc')
             ;
 
         return $qb->getQuery()->getResult();
