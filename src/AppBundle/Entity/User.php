@@ -19,16 +19,16 @@ class User extends BaseUser
      */
     protected $id;
 
-    public function __construct()
-    {
+    public function __construct() {
+
         parent::__construct();
-// your own logic
     }
 
     /**
      * @param $role
      */
     public function setRole($role) {
+
         $this->setRoles(array($role));
     }
 
