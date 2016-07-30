@@ -1,10 +1,9 @@
 {%  extends '::base.html.twig' %}
 
-
 {% block body %}
 
+<div class="">
     {{ form(form) }}
-
 
     {%  if result|length > 0 %}
 
@@ -26,8 +25,8 @@
             {% endfor %}
             </tbody>
         </table>
-{%  else %}
-    <div class="col-xs-12 alert alert-danger"> {{ "No Record Found"|trans }}</div>
+    {%  else %}
+        {{ (form.name.vars.value is not empty) ? '<div class="col-xs-12 alert alert-danger"> No Record Found </div>'}}
     {% endif %}
-
+</div>
 {% endblock %}
