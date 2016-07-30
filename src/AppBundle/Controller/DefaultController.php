@@ -23,26 +23,22 @@ class DefaultController extends Controller
      */
     public function searchGiveawayAction(Request $request) {
 
-
-
         $giveaway = new Giveaway();
-
+        $result = array();
         $form = $this->createForm(new SearchGiveawayType(), $giveaway);
 
+        //Handle request
         $form->handleRequest($request);
-        $result = array();
-        if ($form->isValid()) {
 
-            $session = $this->getRequest()->getSession();
-            $session->getFlashBag()->add('message', 'Article saved!');
+        //Check form validation for empty search fields
+        if ($form->isValid()) {
 
             //Query
             $repo = $this->getDoctrine()->getRepository('AppBundle:Giveaway');
             $data = $form->getData();
             $name = $data->getName();
             $sortType = $data->getPrice();
-            $result = $repo->getGiveaways($name, ($this->getUser()->hasRole('ROLE_ADMIN')) ? array(1,0) : array(0), $sortType );
-
+            $result = $repo->getGiveaways($name, ($this->getUser()->hasRole('ROLE_ADMIN')) ? array(1,0) : array(0), $sortType);
         }
 
         return $this->render('AppBundle::Default/searchGiveaway.html.twig', array('form' => $form->createView(), 'result'=>$result));
