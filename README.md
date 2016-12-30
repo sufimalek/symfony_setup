@@ -1,4 +1,4 @@
-Test Interview
+Test 
 ===============================================
 
 
@@ -7,8 +7,6 @@ Test Interview
 2) run composer install command
     - You will prompted to enter parameter values for setup database.
 
-3) Import rewards.sql file
-
-4) Run link "{your_host}/rewards.gg/web/app.php/"
+3) Run link "{your_host}/symfony_setup/web/app.php/"
 
 Note: Clear cache if needed
